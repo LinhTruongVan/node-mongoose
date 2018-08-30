@@ -1,5 +1,12 @@
 import mongoose from "mongoose";
 
+export type UserModel = mongoose.Document & {
+  username: string;
+  password: String;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
 const userSchema = new mongoose.Schema(
   {
     username: { type: String, unique: true, lowercase: true, trim: true },
